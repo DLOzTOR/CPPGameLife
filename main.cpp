@@ -81,7 +81,7 @@ main(int argc, char *argv[]){
     initializeField();
     setField();
     while(true){
-        //changeField();
+        changeField();
         outputField();
         Sleep(1000);//duration between iteration
         system("cls");
