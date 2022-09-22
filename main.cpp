@@ -60,7 +60,8 @@ void changeField(){
 void outputField(){
     for(int i = 0; i < fieldScale; i++ ){
         for(int j = 0; j < fieldScale; j++){
-            std::cout<< field[j][i];
+            if(field[j][i] == 1) std::cout<<"@";
+            else std::cout << " ";
         }
         std::cout<<std::endl;
     }
