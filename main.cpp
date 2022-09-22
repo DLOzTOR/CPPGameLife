@@ -4,7 +4,7 @@
 
 //gameLife DLOzTOR realization
 
-const int fieldScale = 9; 
+const int fieldScale = 20; 
 int field[fieldScale][fieldScale] = {0}; 
 
 
@@ -66,14 +66,21 @@ void outputField(){
     }
 }
 
+//initialize here start state of field
+int lifeCells[3][2] = {{4,5},{5,5},{6,5}};
+//
+
+void setField( ){
+    int size= sizeof(lifeCells)/2;
+    for (int i = 0; i < size; i ++){
+        field[loopField(lifeCells[i][0])][loopField(lifeCells[i][1])] = 1;
+    }
+}
 
 main(int argc, char *argv[]){
     initializeField();
-    //initialize here start position of field
-    field[loopField(5)][loopField(5)] = 1;
-    field[loopField(5+1)][loopField(5)] = 1;
-    field[loopField(5-1)][loopField(5)] = 1;
-    //
+
+    setField();
     while(true){
         changeField();
         outputField();
